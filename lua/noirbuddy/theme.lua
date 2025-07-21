@@ -13,7 +13,7 @@ end
 
 -- We need this function because we can't do styles.NONE + styles.NONE (we need to ensure it's only added once)
 local sumStyles = function(values)
-  local sum = styles.NONE;
+  local sum = styles.NONE
 
   for _, value in ipairs(values) do
     if value ~= styles.NONE then
@@ -64,7 +64,7 @@ function M.setup(opts)
   Group.new('Visual', nil, colors.noir_8)
   Group.new('SignColumn', nil, colors.background)
   Group.new('LineNr', colors.noir_8, colors.background)
-  Group.new("EndOfBuffer", colors.noir_8, nil)
+  Group.new('EndOfBuffer', colors.noir_8, nil)
 
   Group.new('Comment', colors.noir_7)
   Group.new('Constant', colors.primary)
@@ -177,7 +177,7 @@ function M.setup(opts)
   Group.new('@text.underline', colors.noir_2)
   Group.new('@text.uri', colors.noir_2)
   Group.new('@type', colors.noir_2)
-  Group.new("@identifier", colors.noir_0)
+  Group.new('@identifier', colors.noir_0)
   Group.new('@type.builtin', colors.noir_6)
   Group.new('@type.definition', colors.noir_2)
   Group.new('@variable', colors.secondary)
@@ -185,6 +185,9 @@ function M.setup(opts)
   Group.new('@lsp.type.function', colors.noir_0)
   Group.new('@lsp.type.macro', colors.primary)
   Group.new('@lsp.type.method', colors.noir_2)
+
+  -- Inlay Hints
+  Group.new('LspInlayHint', colors.noir_6, colors.noir_8)
 
   -- Semantic Highlighting
   Group.new('DiagnosticError', colors.diagnostic_error, nil, sumStyles({ s.bold, s.italic, s.undercurl }))
