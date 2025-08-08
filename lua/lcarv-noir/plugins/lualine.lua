@@ -65,8 +65,8 @@ local M = {}
 
 -- Lualine requires hex codes,
 -- But colorbuddy doesn't output hex codes,
--- So we use noirbuddy's `all()` method to get hex codes :)
-local c = require('noirbuddy.colors').all()
+-- So we use lcarv-noir's `all()` method to get hex codes :)
+local c = require('lcarv-noir.colors').all()
 
 M.theme = {
   normal = {

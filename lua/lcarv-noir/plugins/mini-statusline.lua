@@ -58,7 +58,7 @@ end
 -- Noirbuddy active theme
 M.active = function()
   local mini = require('mini.statusline')
-  local noirbuddy = require('noirbuddy.plugins.mini-statusline')
+  local noirbuddy = require('lcarv-noir.plugins.mini-statusline')
 
   if mini.config.use_icons then
     local has_mini_icons, icons = pcall(require, 'mini.icons')
@@ -94,7 +94,7 @@ end
 -- Noirbuddy inactive theme
 M.inactive = function()
   local mini = require('mini.statusline')
-  local noirbuddy = require('noirbuddy.plugins.mini-statusline')
+  local noirbuddy = require('lcarv-noir.plugins.mini-statusline')
 
   local filename = noirbuddy.section_filename()
   local location = noirbuddy.section_location({ minimal = true })

@@ -3,12 +3,12 @@ local colors = require('colorbuddy').colors
 
 local M = {}
 
-function M.getPreset(preset)
-  return require('noirbuddy.presets.' .. preset)
+function M.getColorPalette(palette)
+  return require('lcarv-noir.colors.' .. palette)
 end
 
-function M.mergeWithPreset(preset, merge)
-  return vim.tbl_extend('force', M.getPreset(preset), merge)
+function M.mergeWithPreset(palette, merge)
+  return vim.tbl_extend('force', M.getColorPalette(palette), merge)
 end
 
 function M.all()
@@ -22,10 +22,10 @@ function M.all()
 end
 
 function M.setup(opts)
-  local preset = M.getPreset(opts.preset or 'minimal')
+  local palette = M.getColorPalette(opts.palette or 'minimal')
 
   local getConfiguredColor = function(color)
-    return opts.colors and opts.colors[color] or preset[color]
+    return opts.colors and opts.colors[color] or palette[color]
   end
 
   -- Set up background color
