@@ -11,7 +11,7 @@ function M.setup(opts)
   require('noirbuddy.plugins')
   require('noirbuddy.languages')
 
-  vim.api.nvim_command(string.format('let g:colors_name = "%s"', 'noirbuddy'))
+  vim.api.nvim_command(string.format('let g:colors_name = "%s"', 'lcarv-noir'))
 end
 
 return M
