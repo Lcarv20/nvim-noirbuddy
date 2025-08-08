@@ -31,6 +31,8 @@ function M.setup(opts)
   -- Set up background color
   -- Can be configured by preset or end user
   Color.new('background', getConfiguredColor('background'))
+  Color.new('foreground', getConfiguredColor('foreground'))
+  Color.new('comment', getConfiguredColor('comment'))
 
   -- Set up primary and secondary flavor colors
   -- Can be configured by preset or end user
