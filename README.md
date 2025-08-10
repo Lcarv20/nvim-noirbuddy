@@ -1,4 +1,4 @@
-# Noirbuddy
+# lcarv-noir
 
 A highly customizable minimalist theme building framework for Neovim 🖤
 
@@ -29,7 +29,7 @@ Built on [colorbuddy.nvim](https://github.com/tjdevries/colorbuddy.nvim), with a
 
     ```lua
     use {
-      "jesseleite/nvim-noirbuddy",
+      "lcarv/lcarv-noir",
       requires = { "tjdevries/colorbuddy.nvim" }
     }
     ```
@@ -38,7 +38,7 @@ Built on [colorbuddy.nvim](https://github.com/tjdevries/colorbuddy.nvim), with a
 
     ```lua
     {
-      'jesseleite/nvim-noirbuddy',
+      'lcarv/lcarv-noir',
       dependencies = {
         { 'tjdevries/colorbuddy.nvim' }
       },
@@ -54,7 +54,7 @@ Built on [colorbuddy.nvim](https://github.com/tjdevries/colorbuddy.nvim), with a
 
     ```vim
     Plug 'tjdevries/colorbuddy.nvim'
-    Plug 'jesseleite/nvim-noirbuddy'
+    Plug 'lcarv/lcarv-noir'
     ```
 
 2. Enable the colorscheme in your lua config:
@@ -62,7 +62,7 @@ Built on [colorbuddy.nvim](https://github.com/tjdevries/colorbuddy.nvim), with a
     > ***Note:** You can skip this step if you're using [lazy.nvim](https://github.com/folke/lazy.nvim)!*
 
     ```lua
-    require("noirbuddy").setup()
+    require("lcarv-noir").setup()
     ```
 
 3. Order pizza! 🍕 🤘 😎
@@ -71,21 +71,17 @@ Built on [colorbuddy.nvim](https://github.com/tjdevries/colorbuddy.nvim), with a
 
 The default `minimal` preset consists of a monochromatic grayscale palette with one sexy `primary` color.
 
-You can select from one of the bundled [presets](https://github.com/jesseleite/nvim-noirbuddy/tree/master/lua/noirbuddy/presets) like so:
+You can select from one of the bundled [palettes](https://github.com/lcarv/lcarv-noir/tree/master/lua/lcarv-noir/colors) like so:
 
 ```lua
-require('noirbuddy').setup {
-  preset = 'miami-nights',
+require('lcarv-noir').setup {
+  palette = 'minimal',
 }
 ```
 
-### Available Presets
-
-![](presets.png)
-
 > [!CAUTION]
 > If using lazy.nvim, avoid setting `vim.opt.colorscheme` altogether, as it can cause issues with loading your configured
-> noirbuddy presets. Instead, you may use the `install = { colorscheme = { "noirbuddy" } }` configuration option.
+> lcarv-noir palettes. Instead, you may use the `install = { colorscheme = { "lcarv-noir" } }` configuration option.
 > See [lazy.nvim's configuration](https://lazy.folke.io/configuration) for more details.
 
 ## Customizing Your Theme
@@ -93,7 +89,7 @@ require('noirbuddy').setup {
 You can configure a custom `primary` color like so:
 
 ```lua
-require('noirbuddy').setup {
+require('lcarv-noir').setup {
   colors = {
     primary = '#6EE2FF',
   },
@@ -103,7 +99,7 @@ require('noirbuddy').setup {
 For a more duotone look, you can configure a `secondary` color:
 
 ```lua
-require('noirbuddy').setup {
+require('lcarv-noir').setup {
   colors = {
     primary = '#6EE2FF',
     secondary = '#267FB5',
@@ -114,7 +110,7 @@ require('noirbuddy').setup {
 You can also customize the `background` color:
 
 ```lua
-require('noirbuddy').setup {
+require('lcarv-noir').setup {
   colors = {
     background = '#18181A',
   },
@@ -124,7 +120,7 @@ require('noirbuddy').setup {
 Or even the base grayscale palette:
 
 ```lua
-require("noirbuddy").setup {
+require("lcarv-noir").setup {
   colors = {
     noir_0 = '#ffffff', -- `noir_0` is light for dark themes, and dark for light themes
     noir_1 = '#f5f5f5',
@@ -142,10 +138,10 @@ require("noirbuddy").setup {
 
 ## Customizing Semantic Colors
 
-You may wish to configure specific colors for things that have semantic meaning (ie. red for errors, orange for warnings, etc.), in a way that won't change as you switch between [presets](#selecting-presets):
+You may wish to configure specific colors for things that have semantic meaning (ie. red for errors, orange for warnings, etc.), in a way that won't change as you switch between [palettes](#selecting-palettes):
 
 ```lua
-require("noirbuddy").setup {
+require("lcarv-noir").setup {
   colors = {
     diagnostic_error = '#EC0034',
     diagnostic_warning = '#ff7700',
@@ -163,7 +159,7 @@ require("noirbuddy").setup {
 Some highlight groups (ie. inline diagnostics) are set up so that you can opt-in to certain font styles (though which styles completely depends on the highlight group, and these are all disabled by default):
 
 ```lua
-require("noirbuddy").setup {
+require("lcarv-noir").setup {
   styles = {
     italic = true,
     bold = false,
@@ -179,23 +175,23 @@ require("noirbuddy").setup {
 
 ### Included Configs
 
-Noirbuddy automatically themes several [plugins](https://github.com/jesseleite/nvim-noirbuddy/tree/master/lua/noirbuddy/plugins) out of the box (ie. [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim), [vim-fugitive](https://github.com/tpope/vim-fugitive), [harpoon](https://github.com/ThePrimeagen/harpoon), etc.), but also allows for [customizing highlight groups](#customizing-highlight-groups) and [exporting colors](#exporting-colors) so that you can have full control over every aspect when it comes to theming third party plugins.
+lcarv-noir automatically themes several [plugins](https://github.com/lcarv/lcarv-noir/tree/master/lua/lcarv-noir/plugins) out of the box (ie. [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim), [vim-fugitive](https://github.com/tpope/vim-fugitive), [harpoon](https://github.com/ThePrimeagen/harpoon), etc.), but also allows for [customizing highlight groups](#customizing-highlight-groups) and [exporting colors](#exporting-colors) so that you can have full control over every aspect when it comes to theming third party plugins.
 
 ### Opt-In Configs
 
-Though noirbuddy handles highlight groups automatically, certain plugins may require you to opt-in to more opinionated lua-based theme configs...
+Though lcarv-noir handles highlight groups automatically, certain plugins may require you to opt-in to more opinionated lua-based theme configs...
 
 - [mini.statusline](https://github.com/echasnovski/mini.statusline)
 
     ![](screenshots/mini-statusline.png)
 
     ```lua
-    local noirbuddy_statusline = require('noirbuddy.plugins.mini-statusline')
+    local lcarv_noir_statusline = require('lcarv-noir.plugins.mini-statusline')
 
     require('mini.statusline').setup {
       content = {
-        active = noirbuddy_statusline.active,
-        inactive = noirbuddy_statusline.inactive,
+        active = lcarv_noir_statusline.active,
+        inactive = lcarv_noir_statusline.inactive,
       },
       -- ...
     }
@@ -208,15 +204,15 @@ Though noirbuddy handles highlight groups automatically, certain plugins may req
     ![](screenshots/lualine.png)
 
     ```lua
-    local noirbuddy_lualine = require('noirbuddy.plugins.lualine')
+    local lcarv_noir_lualine = require('lcarv-noir.plugins.lualine')
 
     require('lualine').setup {
       options = {
-        theme = noirbuddy_lualine.theme,
+        theme = lcarv_noir_lualine.theme,
         -- ...
       },
-      sections = noirbuddy_lualine.sections,
-      inactive_sections = noirbuddy_lualine.inactive_sections,
+      sections = lcarv_noir_lualine.sections,
+      inactive_sections = lcarv_noir_lualine.inactive_sections,
       -- ...
     }
     ```
@@ -227,20 +223,20 @@ Though noirbuddy handles highlight groups automatically, certain plugins may req
 
     ```lua
     require('cmp').setup {
-      window = require('noirbuddy.plugins.cmp').window,
+      window = require('lcarv-noir.plugins.cmp').window,
       -- ...
     }
     ```
 
-    > Nvim-cmp's default documentation popup is based off of Neovim's default float highlights, so it can be hard to read over top of your code window. This custom `window` config is recommended, as it adds unique highlight groups for Noirbuddy to style.
+    > Nvim-cmp's default documentation popup is based off of Neovim's default float highlights, so it can be hard to read over top of your code window. This custom `window` config is recommended, as it adds unique highlight groups for lcarv-noir to style.
 
 ### Contributions
 
-If you use a plugin that you think should be included in this repo, [PR's](https://github.com/jesseleite/nvim-noirbuddy/pulls) are welcome 🤘
+If you use a plugin that you think should be included in this repo, [PR's](https://github.com/lcarv/lcarv-noir/pulls) are welcome 🤘
 
 ## Customizing Highlight Groups
 
-Since Noirbuddy is built on [colorbuddy.nvim](https://github.com/tjdevries/colorbuddy.nvim), you can use its API to customize specific highlight groups as needed:
+Since lcarv-noir is built on [colorbuddy.nvim](https://github.com/tjdevries/colorbuddy.nvim), you can use its API to customize specific highlight groups as needed:
 
 ```lua
 -- Require colorbuddy...
@@ -268,11 +264,11 @@ Group.link('SignifySignDelete', groups.DiffDelete)
 
 ## Exporting Colors
 
-If you need access to Noirbuddy's raw color codes for other plugin configs:
+If you need access to lcarv-noir's raw color codes for other plugin configs:
 
 ```lua
--- Export noirbuddy colors...
-local noirbuddy = require('noirbuddy.colors').all()
+-- Export lcarv-noir colors...
+local lcarv_noir = require('lcarv-noir.colors').all()
 
 -- Outputs a simple lua table...
 -- {
@@ -286,7 +282,7 @@ local noirbuddy = require('noirbuddy.colors').all()
 -- }
 ```
 
-You can run `:lua print(vim.inspect(require('noirbuddy.colors').all()))` to see a full list of what is exported.
+You can run `:lua print(vim.inspect(require('lcarv-noir.colors').all()))` to see a full list of what is exported.
 
 ## Thank You!
 
