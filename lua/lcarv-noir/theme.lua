@@ -52,8 +52,8 @@ function M.setup(opts)
 
   -- Text on Primary / Secondary Background Colors
   -- NOTE: Experimental! Might not stay!
-  Group.new('NoirbuddyTextOnPrimary', textOnColor(colors.primary), colors.primary)
-  Group.new('NoirbuddyTextOnSecondary', textOnColor(colors.secondary), colors.secondary)
+  Group.new('LcarvNoirTextOnPrimary', textOnColor(colors.primary), colors.primary)
+  Group.new('LcarvNoirTextOnSecondary', textOnColor(colors.secondary), colors.secondary)
 
   -- Generic Highlighting
   Group.new('Normal', colors.foreground, colors.background)
@@ -117,7 +117,7 @@ function M.setup(opts)
   Group.new('WarningMsg', colors.primary)
   Group.new('WildMenu', colors.noir_5, colors.noir_8)
 
-  Group.new('FloatBorder', colors.comment)
+  Group.new('FloatBorder', colors.secondary, colors.background)
   Group.new('FloatTitle', colors.noir_0)
   Group.new('NormalFloat', colors.foreground)
 
