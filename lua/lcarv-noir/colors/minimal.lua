@@ -23,7 +23,7 @@ return {
   diagnostic_info = '#7a9fc6',
   diagnostic_hint = '#a9b87f',
 
-  diff_add = '#303f32',
-  diff_change = '#34424b',
-  diff_delete = '#4a3231',
+  diff_add = "#a6e3a1",
+  diff_change = "#b4befe",
+  diff_delete = "#f38ba8",
 }
