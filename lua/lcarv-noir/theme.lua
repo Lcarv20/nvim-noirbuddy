@@ -25,12 +25,13 @@ local sumStyles = function(values)
 end
 
 -- Dynamically determine best text color for a given background color
-local textOnColor = function(color)
-  local r, g, b = require('colorbuddy.util').hsl_to_rgb(color.base.H, color.base.S, color.base.L)
+local hex_to_rgb = function(hex_str)
+  local hex = hex_str:gsub('#', '')
+  return tonumber('0x' .. hex:sub(1, 2)), tonumber('0x' .. hex:sub(3, 4)), tonumber('0x' .. hex:sub(5, 6))
+end
 
-  r = r * 255
-  g = g * 255
-  b = b * 255
+local textOnColor = function(color)
+  local r, g, b = hex_to_rgb(color:to_vim())
 
   -- Thx colorizer.nvim and stack overflow! <3
   -- https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color
@@ -73,7 +74,7 @@ function M.setup(opts)
   Group.new('Statement', colors.noir_1)
   Group.new('PreProc', colors.primary)
   Group.new('Type', colors.secondary)
-  Group.new('Special', colors.noir_5)
+  Group.new('LcarvNoirSpecial', colors.noir_5)
   Group.new('Error', colors.primary)
   Group.new('Todo', colors.primary, colors.noir_8)
   Group.new('Function', colors.noir_0)
