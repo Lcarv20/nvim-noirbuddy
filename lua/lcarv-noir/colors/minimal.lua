@@ -4,7 +4,7 @@ return {
   foreground = '#eae6e1',
   comment = '#929094',
 
-  primary = '#e89b6c',
+  primary = '#b4befe',
   secondary = '#d66b6c',
 
   noir_0 = '#eae6e1',
