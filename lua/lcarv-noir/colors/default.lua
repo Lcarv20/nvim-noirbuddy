@@ -4,8 +4,8 @@ return {
   foreground = '#eae6e1',
   comment = '#929094',
 
-  primary = '#b4befe',
-  secondary = '#d66b6c',
+  primary = '#e89b6c',
+  secondary = '#b4befe',
 
   noir_0 = '#eae6e1',
   noir_1 = '#dbd6d2',
@@ -23,7 +23,7 @@ return {
   diagnostic_info = '#7a9fc6',
   diagnostic_hint = '#a9b87f',
 
-  diff_add = "#a6e3a1",
-  diff_change = "#b4befe",
-  diff_delete = "#f38ba8",
+  diff_add = '#a6e3a1',
+  diff_change = '#b4befe',
+  diff_delete = '#f38ba8',
 }
